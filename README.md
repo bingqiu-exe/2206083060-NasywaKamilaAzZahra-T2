@@ -6,12 +6,14 @@
 1. Apa saja pesan log yang dicetak pada panel Output?
    Platform initialized
    Reached objective!
+   Output menandakan bahwa pesawat telah memasuki area tertentu yang ditrigger oleh scene ObjectiveArea.
 
 2.Coba gerakkan landasan ke batas area bawah, lalu gerakkan kembali ke atas hingga hampir menyentuh batas atas. Apa saja pesan log yang dicetak pada panel Output?
-
+   Reached objective!
+   Output mencetak message yang sama sebab pesawat memasuki objektif yang sama.
 
 3. Buka scene MainLevel dengan tampilan workspace 2D. Apakah lokasi scene ObjectiveArea memiliki kaitan dengan pesan log yang dicetak pada panel Output pada percobaan sebelumnya?
-
+   Lokasi scene ObjectiveArea pada workspace 2D memiliki kaitan langsung dengan pesan log tersebut. ObjectiveArea kemungkinan ditempatkan di dekat batas atas area permainan sehingga ketika pesawat bergerak ke atas dan hampir mencapai batas, pesawat akan masuk ke dalam area tersebut dan pesan log muncul.
 
 ## Latihan: Memanipulasi Node dan Scene
 
