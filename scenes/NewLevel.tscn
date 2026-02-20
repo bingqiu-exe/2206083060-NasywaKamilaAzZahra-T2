@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://brij03583fg07"]
+
+[ext_resource type="PackedScene" uid="uid://4dcae4gpc0p3" path="res://scenes/SnowPlatform.tscn" id="1_2q46j"]
+[ext_resource type="Script" uid="uid://cctwkf0oay16t" path="res://scenes/platform_green.gd" id="1_iuvrt"]
+[ext_resource type="PackedScene" uid="uid://ywi2rxtnf36h" path="res://scenes/GreenShip.tscn" id="2_th476"]
+[ext_resource type="Script" uid="uid://32xcje5cccex" path="res://scenes/objective_area.gd" id="3_th476"]
+[ext_resource type="Script" uid="uid://bcx7sv36xlfg3" path="res://scenes/meteors.gd" id="5_iuvrt"]
+[ext_resource type="PackedScene" uid="uid://b5a4ynav86ee6" path="res://scenes/Meteor.tscn" id="6_xev8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q46j"]
+size = Vector2(1181, 121)
+
+[node name="NewLevel" type="Node" unique_id=1773628271]
+
+[node name="PlatformGreen" type="Node2D" parent="." unique_id=321406353]
+position = Vector2(35, 565)
+script = ExtResource("1_iuvrt")
+
+[node name="SnowPlatform" parent="PlatformGreen" unique_id=523496120 instance=ExtResource("1_2q46j")]
+
+[node name="SnowPlatform2" parent="PlatformGreen" unique_id=1144921787 instance=ExtResource("1_2q46j")]
+position = Vector2(70, 0)
+
+[node name="GreenShip" parent="." unique_id=56093644 instance=ExtResource("2_th476")]
+position = Vector2(72.701, 421.9)
+
+[node name="ObjectiveArea" type="Area2D" parent="." unique_id=353774413]
+script = ExtResource("3_th476")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea" unique_id=572557828]
+position = Vector2(340.5, -63)
+shape = SubResource("RectangleShape2D_2q46j")
+
+[node name="Meteors" type="Node2D" parent="." unique_id=496330415]
+script = ExtResource("5_iuvrt")
+meteor_scene = ExtResource("6_xev8i")
+
+[node name="Meteor" parent="Meteors" unique_id=1353918356 instance=ExtResource("6_xev8i")]
+position = Vector2(146, 3)
