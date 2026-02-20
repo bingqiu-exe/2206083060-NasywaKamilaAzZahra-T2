@@ -27,10 +27,14 @@
    Mengubah nilai mass pada RigidBody2D akan memengaruhi bagaimana objek bereaksi terhadap gaya dan tumbukan. Semakin besar massa, semakin besar inersia objek sehingga lebih sulit dipercepat atau diubah geraknya oleh gaya yang sama.
 
 7. Ubah nilai atribut Disabled milik node CollisionShape2D pada scene StonePlatform, lalu coba jalankan scene MainLevel. Apa yang terjadi?
+   Jika atribut disabled pada node CollisionShape2D diatur ke true, maka bentuk tabrakan menjadi tidak aktif. Akibatnya, objek tersebut tidak akan mendeteksi atau bereaksi terhadap tabrakan. Pada StonePlatform, platform akan kehilangan kemampuan untuk menjadi penghalang, sehingga pesawat atau objek lain bisa menembusnya tanpa terpengaruh fisika.
 
-8. Pada scene MainLevel, coba manipulasi atribut Position, Rotation, dan Scale milik node BlueShip secara bebas. Apa yang terjadi pada visualisasi BlueShip di Viewport?
+9. Pada scene MainLevel, coba manipulasi atribut Position, Rotation, dan Scale milik node BlueShip secara bebas. Apa yang terjadi pada visualisasi BlueShip di Viewport?
+    Secara visual, jika kita memanipulasi position, pesawat tergeser posisinya. Jika memanipulasi rotation, arah pesawat memutar sesuai dengan sudut yang ditentukan. Lalu, jika memanipulasi scale, ukuran pesawat diperbesar atau diperkecil.
 
-9. Pada scene MainLevel, perhatikan nilai atribut Position node PlatformBlue, StonePlatform, dan StonePlatform2. Mengapa nilai Position node StonePlatform dan StonePlatform2 tidak sesuai dengan posisinya di dalam scene (menurut Inspector) namun visualisasinya berada di posisi yang tepat?
+11. Pada scene MainLevel, perhatikan nilai atribut Position node PlatformBlue, StonePlatform, dan StonePlatform2. Mengapa nilai Position node StonePlatform dan StonePlatform2 tidak sesuai dengan posisinya di dalam scene (menurut Inspector) namun visualisasinya berada di posisi yang tepat?
+    Nilai position yang ditampilkan di inspector adalah posisi lokal relatif terhadap parent node. Sementara visualisasi di scene menunjukkan posisi global setelah memperhitungkan transformasi dari seluruh parent hierarchy. Jika node StonePlatform dan StonePlatform2 merupakan anak dari node lain (misalnya PlatformBlue atau node lain yang memiliki offset), maka posisi lokalnya mungkin berbeda dengan posisi globalnya. Dengan kata lain, mereka ditempatkan di dalam scene melalui parent yang sudah diposisikan, sehingga nilai lokalnya tidak mencerminkan koordinat global.
+    
 
 
 ## Latihan Mandiri: Memanipulasi Node dan Scene
